@@ -7,5 +7,5 @@ export default defineConfig({
   // Se o './' não funcionou, vamos usar o nome exato do seu repositório.
   // Vi no seu terminal que a pasta se chama 'meu_site'. 
   // Se o nome do seu repositório no GitHub for diferente, substitua 'meu_site' abaixo.
-  base: '/meu_site/',
+  base: '/BrunoW/',
 })

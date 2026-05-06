@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import * as Icons from 'lucide-react';
-const {
-  Github,
-  Linkedin,
+import { FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa';
+import {
   Mail,
   BookOpen,
   Briefcase,
-  Image: ImageIcon,
+  Image as ImageIcon,
   User,
   ExternalLink,
   ChevronRight,
@@ -29,7 +27,7 @@ const {
   Workflow,
   Zap,
   Bot
-} = Icons;
+} from 'lucide-react';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState('home');
