@@ -98,7 +98,7 @@ const App = () => {
         mscDesc: "Pesquisando Inteligência Computacional, com foco principal em LLMs e Processamento de Linguagem Natural.",
         bscDesc: "Estudos focados em métodos quantitativos, inferência estatística e modelagem computacional. Forte ênfase em análise exploratória, probabilidade e aprendizado de máquina aplicado."
       },
-      hobbies: { langTitle: 'Idiomas', russian: 'Russo (Intermediário)', english: 'Inglês (Avançado)', hobbyTitle: 'Hobbies', hobbyList: 'Jogos e Astrofísica', quote: '"Em busca pelo verdadeiro valor do parâmetro."' }
+      hobbies: { langTitle: 'Idiomas', portuguese: 'Português (Nativo)', english: 'Inglês (Avançado)', russian: 'Russo (Intermediário)', hobbyTitle: 'Hobbies', hobbyList: 'Jogos e Astrofísica', quote: '"Em busca pelo verdadeiro valor do parâmetro."' }
     },
     en: {
       nav: { about: 'About', academic: 'Academic', experience: 'Experience', projects: 'Projects', gallery: 'Events' },
@@ -116,7 +116,7 @@ const App = () => {
         mscDesc: "Researching Computational Intelligence, with a strong focus on LLMs and Natural Language Processing.",
         bscDesc: "Studied quantitative methods, statistical inference, and computational modeling. Heavy emphasis on exploratory data analysis, probability, and applied machine learning."
       },
-      hobbies: { langTitle: 'Languages', russian: 'Russian (Intermediate)', english: 'English (Advanced)', hobbyTitle: 'Hobbies', hobbyList: 'Gaming and Astrophysics', quote: '"In search of the true parameter value."' }
+      hobbies: { langTitle: 'Languages', portuguese: 'Portuguese (Native)', english: 'English (Advanced)', russian: 'Russian (Intermediate)', hobbyTitle: 'Hobbies', hobbyList: 'Gaming and Astrophysics', quote: '"In search of the true parameter value."' }
     }
   };
 
@@ -130,7 +130,7 @@ const App = () => {
     linkedin: "https://www.linkedin.com/in/bruno-wavrzenczak/",
     // Caminhos relativos para os arquivos no GitHub
     avatarUrl: euPic,
-    cvUrl: lang === 'pt' ? "/Bruno_Wavrzenczak_cv_pt.pdf" : "/Bruno_Wavrzenczak_cv_en.pdf"
+    cvUrl: lang === 'pt' ? "./Bruno_Wavrzenczak_cv_pt.pdf" : "./Bruno_Wavrzenczak_cv_en.pdf"
   };
 
   const academic = {
@@ -391,8 +391,8 @@ const App = () => {
                   <div className={`p-8 border rounded-2xl text-center border-dashed ${isDark ? 'border-slate-700 bg-slate-800/50' : 'border-slate-300 bg-slate-50'}`}>
                     <p className={`italic ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
                       {lang === 'pt' 
-                        ? 'Ainda convergindo... Modelos estão sendo treinados e rascunhos estão no forno. Novidades em breve!' 
-                        : 'Still converging... Models are training and drafts are in the oven. Updates coming soon!'}
+                        ? 'Ainda convergindo... Novidades em breve!' 
+                        : 'Still converging... Updates coming soon!'}
                     </p>
                   </div>
                 )}
@@ -579,8 +579,9 @@ const App = () => {
                 <div className="space-y-6">
                   <div>
                     <p className="text-blue-200 text-xs font-black uppercase tracking-widest mb-1">{t[lang].hobbies.langTitle}</p>
-                    <p className="font-bold text-lg">{t[lang].hobbies.russian}</p>
+                    <p className="font-bold text-lg">{t[lang].hobbies.portuguese}</p>
                     <p className="font-bold text-lg">{t[lang].hobbies.english}</p>
+                    <p className="font-bold text-lg">{t[lang].hobbies.russian}</p>
                   </div>
                   <div>
                     <p className="text-blue-200 text-xs font-black uppercase tracking-widest mb-1">{t[lang].hobbies.hobbyTitle}</p>
