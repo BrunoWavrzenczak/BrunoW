@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FaGithub as Github, FaLinkedin as Linkedin } from 'react-icons/fa';
 import {
   Mail,
@@ -9,7 +9,6 @@ import {
   ExternalLink,
   ChevronRight,
   Download,
-  Award,
   Database,
   Terminal,
   FileText,
@@ -22,7 +21,6 @@ import {
   X,
   Maximize2,
   Code2,
-  Layers,
   Box,
   Workflow,
   Zap,
@@ -98,7 +96,7 @@ const App = () => {
         mscDesc: "Pesquisando Inteligência Computacional, com foco principal em LLMs e Processamento de Linguagem Natural.",
         bscDesc: "Estudos focados em métodos quantitativos, inferência estatística e modelagem computacional. Forte ênfase em análise exploratória, probabilidade e aprendizado de máquina aplicado."
       },
-      hobbies: { langTitle: 'Idiomas', portuguese: 'Português (Nativo)', english: 'Inglês (Avançado)', russian: 'Russo (Intermediário)', hobbyTitle: 'Hobbies', hobbyList: 'Jogos e Astrofísica', quote: '"Em busca pelo verdadeiro valor do parâmetro."' }
+      hobbies: { langTitle: 'Idiomas', portuguese: 'Português (Nativo)', english: 'Inglês (Avançado)', russian: 'Russo (Intermediário)', hobbyTitle: 'Hobbies', hobbyList: 'Jogos, Astrofísica e Exploração Espacial', quote: '"Em busca pelo verdadeiro valor do parâmetro."' }
     },
     en: {
       nav: { about: 'About', academic: 'Academic', experience: 'Experience', projects: 'Projects', gallery: 'Events' },
@@ -116,7 +114,7 @@ const App = () => {
         mscDesc: "Researching Computational Intelligence, with a strong focus on LLMs and Natural Language Processing.",
         bscDesc: "Studied quantitative methods, statistical inference, and computational modeling. Heavy emphasis on exploratory data analysis, probability, and applied machine learning."
       },
-      hobbies: { langTitle: 'Languages', portuguese: 'Portuguese (Native)', english: 'English (Advanced)', russian: 'Russian (Intermediate)', hobbyTitle: 'Hobbies', hobbyList: 'Gaming and Astrophysics', quote: '"In search of the true parameter value."' }
+      hobbies: { langTitle: 'Languages', portuguese: 'Portuguese (Native)', english: 'English (Advanced)', russian: 'Russian (Intermediate)', hobbyTitle: 'Hobbies', hobbyList: 'Gaming, Astrophysics, and Space Exploration', quote: '"In search of the true parameter value."' }
     }
   };
 
@@ -150,34 +148,52 @@ const App = () => {
         tags: ["Statistics", "R", "Data Analysis", "Probability", "Machine Learning"]
       }
     ],
-    publications: [],
+    publications: [
+      {
+        title: "Predicting transition to psychiatric disorders in clinical high-risk for psychosis subjects using machine learning and facial features",
+        authors: "Loch, A. A.; Queluz, F. H.; Wavrzenczak, B.; et al.",
+        journal: "Schizophrenia Research",
+        year: "2026",
+        doi: "10.1016/j.schres.2026.06.001",
+        abstract: lang === 'pt'
+          ? "O estado de alto risco clínico para psicose (CHR) é cada vez mais visto como um estado de risco transdiagnóstico, mas marcadores escaláveis de desfechos adversos permanecem limitados. Testamos se a dinâmica facial extraída de vídeos basais poderia prever a transição para qualquer transtorno psiquiátrico em indivíduos CHR. Na coorte SSAPP, os participantes CHR foram avaliados no início do estudo (baseline) com SIPS e SCID-5 e acompanhados por uma média de 22,8 meses. Vídeos basais de 50 participantes foram analisados. Marcos faciais e Unidades de Ação (AUs) foram extraídos com OpenFace 2.0 a partir de gravações de Visão Geral do Assunto (SO) e Recordação de Memória (MR). Características derivadas de PCA das variáveis de dinâmica facial foram usadas para treinar modelos de regressão logística com pesos de classe e validação cruzada leave-one-out. Vinte e nove participantes transitaram para um transtorno psiquiátrico (9 psicóticos, 20 não psicóticos) e 21 não. O melhor desempenho de classificação foi obtido com características derivadas de PCA dos vídeos SO (acurácia balanceada = 71%, F1-score = 72%, sensibilidade = 66%, especificidade = 76%). A sensibilidade para identificar a transição psicótica foi maior do que para a transição não psicótica (78% vs 60%). A dinâmica facial a partir de vídeos clínicos constitui um potencial marcador escalável para desfechos psiquiátricos adversos em populações CHR. Estudos futuros com amostras maiores e validadas externamente são necessários."
+          : "Clinical-high-risk for psychosis (CHR) status is increasingly viewed as a transdiagnostic risk state, but scalable markers of adverse outcomes remain limited. We tested whether facial dynamics extracted from baseline videos could predict transition to any psychiatric disorder in CHR individuals. In the SSAPP cohort, CHR participants were assessed at baseline with SIPS and SCID-5 and followed for a mean of 22.8 months. Baseline videos from 50 participants were analyzed. Facial landmarks and Action Units were extracted with OpenFace 2.0 from Subject Overview (SO) and Memory Recall (MR) recordings. Features derived from PCA of facial dynamic variables were used to train class-weighted logistic regression models with Leave-One-Out Cross-Validation. Twenty-nine participants transitioned to a psychiatric disorder (9 psychotic, 20 non-psychotic) and 21 did not. Best classification performance was achieved with SO video PCA-derived features (balanced accuracy = 71%, F1-score = 72%, sensitivity = 66%, specificity = 76%). Sensitivity to identify psychotic transition was higher than for non-psychotic transition (78% vs 60%). Facial dynamics from clinical videos are potential scalable markers for adverse psychiatric outcomes in CHR populations. Future studies with larger, externally validated samples are needed.",
+        link: "https://www.sciencedirect.com/science/article/pii/S0920996426001751"
+      }
+    ],
     roles: [
       {
-        role: lang === 'pt' ? "Pesquisador" : "Researcher",
+        role: lang === 'pt' ? "Projeto Machine Learning na Saúde" : "Machine Learning in Healthcare Project",
         company: "Universidade de São Paulo (USP)",
         period: `2024 - ${t[lang].common.present}`,
-        description: lang === 'pt' ? "Pesquisando abordagens multimodais com dados não estruturados. Extraio e processo features diretamente de vídeos (áudio, imagem e texto)." : "Researching multimodal approaches to unstructured data. I extract and process features directly from video, audio, and text.",
+        description: lang === 'pt' 
+          ? "Desenvolvimento de um aplicativo web utilizando Machine Learning e IA para triagem preliminar de esquizofrenia, otimizando o processo de triagem."
+          : "Developed a web application utilizing Machine Learning and AI for preliminary schizophrenia screening, streamlining and accelerating the triage process.",
         achievements: lang === 'pt' ? [
-          "Geração de embeddings multimodais utilizando LLMs.",
-          "Treinamento e ajuste fino de modelos de aprendizado de máquina.",
-          "Construção de modelos preditivos para classificar pacientes em alto risco clínico de esquizofrenia (ARMS)."
+          "Processamento e análise de dados complexos e não estruturados extraídos de vídeos de consultas clínicas.",
+          "Construção e treinamento de modelos de Machine Learning para classificação de esquizofrenia utilizando Scikit-learn e PyTorch.",
+          "Uso de Python para implementar automação com IA e fluxos de trabalho de Processamento de Linguagem Natural (PLN).",
+          "Participação em reportagem de TV de alcance nacional (Band TV), apresentando o projeto como solução tecnológica para a saúde."
         ] : [
-          "Generating multimodal embeddings using LLMs.",
-          "Training and fine-tuning machine learning models.",
-          "Building predictive models to classify patients at clinical high risk for schizophrenia (ARMS)."
+          "Processed and analyzed complex, unstructured data extracted from clinical consultation videos.",
+          "Built and trained Machine Learning models for schizophrenia classification using Scikit-learn and PyTorch.",
+          "Utilized Python to implement AI automation and Natural Language Processing (NLP) workflows.",
+          "Featured in national television media coverage (Band TV), highlighting the project’s technological and social impact on healthcare."
         ]
       },
       {
-        role: lang === 'pt' ? "Bolsista" : "Scholar",
-        company: "Programa de Educação Tutorial (PET Estatística - UFPR)",
+        role: lang === 'pt' ? "PET Estatística" : "PET Statistics Program",
+        company: "Programa de Educação Tutorial (UFPR)",
         period: "2022 - 2025",
-        description: lang === 'pt' ? "Desenvolvimento de projetos de pesquisa, ensino e extensão na área de estatística e ciência de dados." : "Development of research, teaching, and outreach projects in statistics and data science.",
+        description: lang === 'pt' 
+          ? "Atuação como bolsista do Programa de Educação Tutorial (PET), integrando atividades de ensino, pesquisa acadêmica e extensão."
+          : "Served as a member of Brazil’s Tutorial Education Program (PET), engaging in academic research, teaching, and extension activities.",
         achievements: lang === 'pt' ? [
-          "Organização de minicursos e eventos acadêmicos.",
-          "Ministração de aulas de reforço das disciplinas curriculares para auxiliar no desempenho acadêmico de outros alunos."
+          "Organização de workshops e minicursos sobre R, visualização de dados e temas correlatos para estudantes de graduação.",
+          "Contribuição em projetos práticos e pedagógicos voltados para a Estatística aplicada."
         ] : [
-          "Organizing mini-courses and academic events.",
-          "Teaching reinforcement classes for core subjects to support the academic performance of other students."
+          "Organized workshops and short courses on R, data visualization, and related topics for undergraduate students.",
+          "Contributed to both practical and teaching-oriented work in applied statistics."
         ]
       }
     ]
@@ -237,7 +253,7 @@ const App = () => {
       details: lang === 'pt' ? "Iniciativa de alfabetização estatística através do DataSciLabs." : "Part of the DataSciLabs statistical literacy initiative.",
       longDesc: lang === 'pt'
         ? "Como parte das atividades do projeto de extensão DataSciLabs, atuei como instrutor ministrando uma aula prática de introdução à linguagem R. O diferencial desta iniciativa foi o seu foco em democratizar a análise de dados: o curso foi totalmente aberto ao público externo, alcançando pessoas de fora da universidade e de outros cursos além da Estatística. A experiência foi incrível para praticar a didática e contribuir com a alfabetização estatística da comunidade."
-        : "As part of DataSciLabs, I taught a hands-on introductory R programming class. What made this special was our focus on democratizing data analysis—the course was entirely open to the public, bringing in people from outside the university and from non-tech backgrounds. It was a great way to practice teaching while giving back to the community.",
+        : "As part of DataSciLabs, I taught a hands-on introductory R programming class. What made this special was our focus on democratizing data analysis: the course was entirely open to the public, bringing in people from outside the university and from non-tech backgrounds. It was a great way to practice teaching while giving back to the community.",
       images: [aulaR]
     },
     {
@@ -246,7 +262,7 @@ const App = () => {
       type: "Data Science / Competition",
       tech: ["R", "Estatística Descritiva", "Data Visualization"],
       desc: lang === 'pt' ? "Análise do perfil dos turistas da Linha Turismo de Curitiba." : "Analysis of the tourist profile of the Curitiba Tourist Bus line.",
-      details: lang === 'pt' ? "Concurso bienal promovido pelo International Statistical Literacy Project." : "Biennial contest promoted by the International Statistical Literacy Project.",
+      details: lang === 'pt' ? "Concurso bienal promovido pelo International Statistical Literacy Project." : "Biennial contest promovido pelo International Statistical Literacy Project.",
       longDesc: lang === 'pt'
         ? "Participação na ISLP Poster Competition 2024-2025, um concurso global promovido a cada dois anos pelo International Statistical Literacy Project. Neste projeto, construímos um poster científico com o objetivo de analisar o perfil dos usuários da famosa Linha Turismo (ônibus de turismo) de Curitiba. Exploramos dados demográficos e preferências para gerar insights estatísticos sobre o comportamento dos turistas na cidade."
         : "Participation in the ISLP Poster Competition 2024-2025, a global contest promoted every two years by the International Statistical Literacy Project. In this project, we built a scientific poster aiming to analyze the profile of users of the famous Curitiba Tourist Bus line. We explored demographic data and preferences to generate statistical insights about tourist behavior in the city.",
@@ -260,8 +276,8 @@ const App = () => {
       desc: lang === 'pt' ? "Meu primeiro dashboard em Shiny utilizando dados de jogadores do FIFA 2021." : "My first Shiny dashboard using FIFA 2021 player data.",
       details: lang === 'pt' ? "Projeto desenvolvido durante uma disciplina acadêmica focada em R Shiny." : "Project developed during an academic course focused on R Shiny.",
       longDesc: lang === 'pt'
-        ? "Este foi um dos meus primeiros projetos utilizando o framework Shiny no R. A proposta da disciplina era criar um dashboard do zero, e cada aluno podia escolher sua própria base de dados – eu optei por utilizar dados de jogadores do FIFA 2021. O objetivo foi construir um dashboard interativo capaz de analisar e visualizar os atributos dos atletas, permitindo explorar os perfis, comparar habilidades e gerar insights visuais."
-        : "This was one of my first projects using the Shiny framework in R. The course assignment was to build a dashboard from scratch, and each student could choose their own dataset—I chose to use FIFA 2021 player data. The goal was to build an interactive dashboard capable of analyzing and visualizing athlete attributes, allowing users to explore profiles, compare skills, and generate visual insights.",
+        ? "Este foi um dos meus primeiros projetos utilizando o framework Shiny no R. A proposta da disciplina era criar um dashboard do zero, e cada aluno podia escolher sua própria base de dados, e eu optei por utilizar dados de jogadores do FIFA 2021. O objetivo foi construir um dashboard interativo capaz de analisar e visualizar os atributos dos atletas, permitindo explorar os perfis, comparar habilidades e gerar insights visuais."
+        : "This was one of my first projects using the Shiny framework in R. The course assignment was to build a dashboard from scratch, and each student could choose their own dataset, and I chose to use FIFA 2021 player data. The goal was to build an interactive dashboard capable of analyzing and visualizing athlete attributes, allowing users to explore profiles, compare skills, and generate visual insights.",
       link: "https://wavrzenczak.shinyapps.io/Jogadores_FiFA_21/",
       linkText: lang === 'pt' ? "Ver Dashboard" : "View Dashboard",
       github: "https://github.com/BrunoWavrzenczak/Dashboard_FIFA-2021",
@@ -378,13 +394,23 @@ const App = () => {
               <div className="space-y-4">
                 {academic.publications.length > 0 ? (
                   academic.publications.map((pub, idx) => (
-                    <div key={idx} className={`group p-6 border rounded-2xl transition-all ${isDark ? 'bg-slate-800 border-slate-700 hover:border-blue-500' : 'bg-white border-slate-200 hover:border-blue-400'}`}>
+                    <div 
+                      key={idx} 
+                      onClick={() => setSelectedItem({ type: 'publication', data: pub })}
+                      className={`group p-6 border rounded-2xl cursor-pointer transition-all ${isDark ? 'bg-slate-800 border-slate-700 hover:border-blue-500' : 'bg-white border-slate-200 hover:border-blue-400'}`}
+                    >
                       <h3 className={`font-bold text-lg group-hover:text-blue-500 transition-colors ${isDark ? 'text-white' : ''}`}>{pub.title}</h3>
-                      <p className="text-slate-500 text-sm mt-1">{pub.journal} • {pub.year}</p>
-                      <p className={`mt-3 text-sm italic ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>{pub.abstract}</p>
-                      <a href={pub.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-blue-500 font-bold text-xs uppercase tracking-widest">
-                        {lang === 'pt' ? 'Ler Documento' : 'Read Paper'} <ExternalLink size={14} />
-                      </a>
+                      <p className="text-slate-500 text-sm mt-1">{pub.authors} • <span className="italic">{pub.journal}</span> • {pub.year}</p>
+                      {pub.doi && (
+                        <p className="text-slate-400 text-xs mt-2 font-mono" onClick={(e) => e.stopPropagation()}>
+                          DOI: <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline inline-flex items-center gap-1">
+                            {pub.doi} <ExternalLink size={12} />
+                          </a>
+                        </p>
+                      )}
+                      <div className="mt-4 inline-flex items-center gap-2 text-blue-500 font-bold text-xs uppercase tracking-widest">
+                        {lang === 'pt' ? 'Ver Resumo & Detalhes' : 'View Abstract & Details'} <ChevronRight size={14} />
+                      </div>
                     </div>
                   ))
                 ) : (
@@ -553,7 +579,7 @@ const App = () => {
                 <h3 className={`text-2xl font-bold mb-8 flex items-center gap-3 ${isDark ? 'text-white' : ''}`}>
                   <Cpu size={24} className="text-blue-500" /> {t[lang].sections.tech}
                 </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+                <div className="flex flex-wrap gap-3 md:gap-4">
                   {[
                     { name: 'Python', icon: <Code2 size={24} className="text-blue-500" /> },
                     { name: 'R', icon: <BarChart2 size={24} className="text-blue-500" /> },
@@ -565,9 +591,9 @@ const App = () => {
                     { name: 'NLP', icon: <Bot size={24} className="text-blue-500" /> },
                     { name: 'n8n', icon: <Workflow size={24} className="text-blue-500" /> }
                   ].map(skill => (
-                    <div key={skill.name} className={`flex items-center gap-3 p-4 rounded-2xl shadow-sm border transition-colors ${isDark ? 'bg-slate-800 border-slate-700 text-slate-300' : 'bg-white border-slate-100 text-slate-700'}`}>
-                      <span>{skill.icon}</span>
-                      <span className="font-bold">{skill.name}</span>
+                    <div key={skill.name} className={`flex items-center gap-2 md:gap-3 px-4 py-3 md:p-4 rounded-2xl shadow-sm border transition-colors ${isDark ? 'bg-slate-800 border-slate-700 text-slate-300' : 'bg-white border-slate-100 text-slate-700'}`}>
+                      <span className="shrink-0">{skill.icon}</span>
+                      <span className="font-bold text-sm md:text-base whitespace-nowrap">{skill.name}</span>
                     </div>
                   ))}
                 </div>
@@ -599,15 +625,15 @@ const App = () => {
   };
 
   return (
-    <div className={`min-h-screen font-sans selection:bg-blue-100 transition-colors duration-300 ${isDark ? 'bg-slate-900 text-white' : 'bg-white text-slate-900'}`}>
+    <div className={`min-h-screen font-sans selection:bg-blue-100 transition-colors duration-300 overflow-x-hidden w-full ${isDark ? 'bg-slate-900 text-white' : 'bg-white text-slate-900'}`}>
       <nav className={`fixed top-0 w-full backdrop-blur-xl z-50 border-b transition-colors duration-300 ${isDark ? 'bg-slate-900/90 border-slate-800' : 'bg-white/90 border-slate-50'}`}>
-        <div className="max-w-6xl mx-auto px-8 h-20 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-4 lg:py-0 min-h-[5rem] flex flex-wrap items-center justify-between gap-y-4">
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => setActiveTab('home')}>
             <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white font-black">B</div>
             <span className={`font-black text-xl tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>BRUNO.</span>
           </div>
 
-          <div className="hidden lg:flex items-center gap-8 text-xs font-black uppercase tracking-widest">
+          <div className="flex items-center gap-6 lg:gap-8 text-[10px] lg:text-xs font-black uppercase tracking-widest overflow-x-auto w-full lg:w-auto order-last lg:order-none pb-2 lg:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {['home', 'academic', 'experience', 'projects', 'gallery'].map(tab => (
               <button
                 key={tab}
@@ -643,7 +669,7 @@ const App = () => {
         </div>
       </nav>
 
-      <main className="max-w-6xl mx-auto px-8 pt-40 pb-32">
+      <main className="max-w-6xl mx-auto px-4 md:px-8 pt-48 lg:pt-40 pb-32">
         {renderContent()}
       </main>
 
@@ -667,36 +693,50 @@ const App = () => {
 
             <div className="p-8 sm:p-12">
               <div className="mb-8">
-                <span className="text-xs font-black text-blue-500 uppercase tracking-widest">{selectedItem.data.category || selectedItem.data.type}</span>
+                <span className="text-xs font-black text-blue-500 uppercase tracking-widest">
+                  {selectedItem.type === 'publication' 
+                    ? (lang === 'pt' ? 'Artigo Científico' : 'Scientific Paper') 
+                    : (selectedItem.data.category || selectedItem.data.type)}
+                </span>
                 <h2 className={`text-3xl sm:text-4xl font-black mt-2 mb-4 ${isDark ? 'text-white' : 'text-slate-900'}`}>{selectedItem.data.title}</h2>
-                <div className="flex items-center gap-4 text-sm font-bold text-slate-500">
-                  {selectedItem.data.date && <span className="flex items-center gap-1"><MapPin size={14} /> {selectedItem.data.date}</span>}
+                <div className="flex flex-wrap items-center gap-4 text-sm font-bold text-slate-500">
+                  {selectedItem.type === 'project' && selectedItem.data.date && <span className="flex items-center gap-1"><MapPin size={14} /> {selectedItem.data.date}</span>}
                   {selectedItem.type === 'project' && <span className="flex items-center gap-1 underline decoration-blue-500/30 tracking-wider">#{selectedItem.data.tech[0]}</span>}
+                  {selectedItem.type === 'publication' && <span className="flex items-center gap-1"><BookOpen size={14} /> {selectedItem.data.journal} ({selectedItem.data.year})</span>}
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                {(selectedItem.data.images || []).map((img, i) => (
-                  <div key={i} className={`aspect-video rounded-2xl overflow-hidden flex items-center justify-center border cursor-pointer hover:opacity-90 transition-opacity ${isDark ? 'bg-slate-800 border-slate-700 text-slate-600' : 'bg-slate-50 border-slate-100 text-slate-300'}`} onClick={() => setExpandedImage(img)}>
-                    <img src={img} alt={`${selectedItem.data.title} view ${i}`} className="w-full h-full object-cover" onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.parentElement.innerHTML = '<div class="flex flex-col items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-image"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div>';
-                    }} />
-                  </div>
-                ))}
-              </div>
+              {(selectedItem.data.images && selectedItem.data.images.length > 0) && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                  {selectedItem.data.images.map((img, i) => (
+                    <div key={i} className={`aspect-video rounded-2xl overflow-hidden flex items-center justify-center border cursor-pointer hover:opacity-90 transition-opacity ${isDark ? 'bg-slate-800 border-slate-700 text-slate-600' : 'bg-slate-50 border-slate-100 text-slate-300'}`} onClick={() => setExpandedImage(img)}>
+                      <img src={img} alt={`${selectedItem.data.title} view ${i}`} className="w-full h-full object-cover" onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.parentElement.innerHTML = '<div class="flex flex-col items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-image"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div>';
+                      }} />
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <div className="grid md:grid-cols-3 gap-12">
                 <div className="md:col-span-2">
                   <h4 className={`text-lg font-bold mb-4 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
-                    {selectedItem.type === 'project' ? t[lang].common.details : t[lang].common.eventDetails}
+                    {selectedItem.type === 'project' ? t[lang].common.details : selectedItem.type === 'publication' ? (lang === 'pt' ? 'Resumo (Abstract)' : 'Abstract') : t[lang].common.eventDetails}
                   </h4>
                   <p className={`text-lg leading-relaxed ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>
-                    {selectedItem.data.longDesc}
+                    {selectedItem.type === 'publication' ? selectedItem.data.abstract : selectedItem.data.longDesc}
                   </p>
                 </div>
 
                 <div className="space-y-8">
+                  {selectedItem.type === 'publication' && (
+                    <div>
+                      <h4 className={`text-xs font-black uppercase tracking-widest mb-4 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>{lang === 'pt' ? 'Autores' : 'Authors'}</h4>
+                      <p className={`text-sm ${isDark ? 'text-slate-300' : 'text-slate-600'}`}>{selectedItem.data.authors}</p>
+                    </div>
+                  )}
+
                   {selectedItem.type === 'project' && (
                     <div>
                       <h4 className={`text-xs font-black uppercase tracking-widest mb-4 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>Tech Stack</h4>
@@ -708,7 +748,7 @@ const App = () => {
                     </div>
                   )}
 
-                  {(selectedItem.data.link || selectedItem.data.github) && (
+                  {(selectedItem.data.link || selectedItem.data.github || selectedItem.data.doi) && (
                     <div>
                       <h4 className={`text-xs font-black uppercase tracking-widest mb-4 ${isDark ? 'text-slate-500' : 'text-slate-400'}`}>Links</h4>
                       <div className="flex flex-col gap-3">
@@ -717,7 +757,12 @@ const App = () => {
                             <Github size={16} /> {lang === 'pt' ? 'Repositório GitHub' : 'GitHub Repository'}
                           </a>
                         )}
-                        {selectedItem.data.link && (
+                        {selectedItem.data.doi && (
+                          <a href={`https://doi.org/${selectedItem.data.doi}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500 font-bold hover:underline">
+                            <ExternalLink size={16} /> DOI: {selectedItem.data.doi}
+                          </a>
+                        )}
+                        {selectedItem.type !== 'publication' && selectedItem.data.link && (
                           <a href={selectedItem.data.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500 font-bold hover:underline">
                             <ExternalLink size={16} /> {selectedItem.data.linkText || (lang === 'pt' ? 'Acessar Link' : 'Access Link')}
                           </a>
@@ -740,12 +785,12 @@ const App = () => {
               <p className="text-slate-400 text-lg leading-relaxed">{t[lang].footer.sub}</p>
             </div>
             <div className="flex flex-col justify-center gap-4">
-              <a href={`mailto:${profile.email}`} target="_blank" rel="noopener noreferrer" className={`group flex items-center justify-between p-6 rounded-3xl transition-all ${isDark ? 'bg-slate-900 hover:bg-blue-600' : 'bg-slate-800 hover:bg-blue-600'}`}>
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-slate-700 rounded-xl text-white group-hover:bg-blue-500 transition-all"><Mail size={24} /></div>
-                  <span className="font-bold text-xl">{profile.email}</span>
+              <a href={`mailto:${profile.email}`} target="_blank" rel="noopener noreferrer" className={`group flex items-center justify-between p-4 sm:p-6 rounded-3xl transition-all w-full overflow-hidden ${isDark ? 'bg-slate-900 hover:bg-blue-600' : 'bg-slate-800 hover:bg-blue-600'}`}>
+                <div className="flex items-center gap-3 sm:gap-4 min-w-0">
+                  <div className="p-3 bg-slate-700 rounded-xl text-white group-hover:bg-blue-500 transition-all shrink-0"><Mail size={24} className="w-5 h-5 sm:w-6 sm:h-6" /></div>
+                  <span className="font-bold text-sm sm:text-xl truncate">{profile.email}</span>
                 </div>
-                <ChevronRight className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                <ChevronRight className="hidden sm:block opacity-0 group-hover:opacity-100 transition-opacity shrink-0" />
               </a>
             </div>
           </div>
